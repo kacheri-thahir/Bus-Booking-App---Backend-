@@ -26,7 +26,7 @@ class BusSerializer(serializers.ModelSerializer):
 class SeatSerializer(serializers.ModelSerializer):
     class Meta:
         model= Seat
-        fields= ['id','seat_number','is_booked']
+        fields= ['id','Seat_number','is_booked']
 
 class BookingSerializer(serializers.ModelSerializer):
     bus=serializers.StringRelatedField()

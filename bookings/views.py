@@ -82,6 +82,13 @@ class userbookingview(APIView):
         serializer=BookingSerializer(bookings,many=True)
         return Response(serializer.data)
 
+# each bus seats :
 
-            
+class SeatListView(APIView):
+    def get(self,request,bus_id):
+        seats=Seat.objects.filter(bus_id=bus_id)
+        serializer=SeatSerializer(seats,many=True)
+        return Response(serializer.data,status=status.HTTP_200_OK)
+    
+
 
